@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'src/cubit/swag_cubit.dart';
+import 'src/repository/swag_repository.dart';
 import 'src/screens/home.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,9 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'HF-2021 SwagList',
-      home: HomePage(),
+      home: BlocProvider(
+        create: (_) => SwagCubit(SwagRepositoryImpl()),
+        child: HomePage(),
+      ),
     );
   }
 }
