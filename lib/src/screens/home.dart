@@ -16,10 +16,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(Strings.title),
       ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [],
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [],
+          ),
         ),
       ),
     );
