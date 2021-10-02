@@ -22,7 +22,7 @@ class _$SwagListTearOff {
   const _$SwagListTearOff();
 
   _SwagList call(
-      {required bool status, required Map<String, List<SwagElement>> list}) {
+      {required bool status, required Map<String, List<SwagElement?>> list}) {
     return _SwagList(
       status: status,
       list: list,
@@ -40,7 +40,8 @@ const $SwagList = _$SwagListTearOff();
 /// @nodoc
 mixin _$SwagList {
   bool get status => throw _privateConstructorUsedError;
-  Map<String, List<SwagElement>> get list => throw _privateConstructorUsedError;
+  Map<String, List<SwagElement?>> get list =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +53,7 @@ mixin _$SwagList {
 abstract class $SwagListCopyWith<$Res> {
   factory $SwagListCopyWith(SwagList value, $Res Function(SwagList) then) =
       _$SwagListCopyWithImpl<$Res>;
-  $Res call({bool status, Map<String, List<SwagElement>> list});
+  $Res call({bool status, Map<String, List<SwagElement?>> list});
 }
 
 /// @nodoc
@@ -76,7 +77,7 @@ class _$SwagListCopyWithImpl<$Res> implements $SwagListCopyWith<$Res> {
       list: list == freezed
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<SwagElement>>,
+              as Map<String, List<SwagElement?>>,
     ));
   }
 }
@@ -86,7 +87,7 @@ abstract class _$SwagListCopyWith<$Res> implements $SwagListCopyWith<$Res> {
   factory _$SwagListCopyWith(_SwagList value, $Res Function(_SwagList) then) =
       __$SwagListCopyWithImpl<$Res>;
   @override
-  $Res call({bool status, Map<String, List<SwagElement>> list});
+  $Res call({bool status, Map<String, List<SwagElement?>> list});
 }
 
 /// @nodoc
@@ -111,7 +112,7 @@ class __$SwagListCopyWithImpl<$Res> extends _$SwagListCopyWithImpl<$Res>
       list: list == freezed
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<SwagElement>>,
+              as Map<String, List<SwagElement?>>,
     ));
   }
 }
@@ -127,7 +128,7 @@ class _$_SwagList implements _SwagList {
   @override
   final bool status;
   @override
-  final Map<String, List<SwagElement>> list;
+  final Map<String, List<SwagElement?>> list;
 
   @override
   String toString() {
@@ -164,14 +165,15 @@ class _$_SwagList implements _SwagList {
 abstract class _SwagList implements SwagList {
   const factory _SwagList(
       {required bool status,
-      required Map<String, List<SwagElement>> list}) = _$_SwagList;
+      required Map<String, List<SwagElement?>> list}) = _$_SwagList;
 
   factory _SwagList.fromJson(Map<String, dynamic> json) = _$_SwagList.fromJson;
 
   @override
   bool get status => throw _privateConstructorUsedError;
   @override
-  Map<String, List<SwagElement>> get list => throw _privateConstructorUsedError;
+  Map<String, List<SwagElement?>> get list =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SwagListCopyWith<_SwagList> get copyWith =>
@@ -188,17 +190,17 @@ class _$SwagElementTearOff {
 
   _SwagElement call(
       {required String organization,
-      required String orgUrl,
+      required String org_url,
       required List<String> tags,
       required String description,
-      required int noOfPrs,
+      required int no_of_prs,
       required String link}) {
     return _SwagElement(
       organization: organization,
-      orgUrl: orgUrl,
+      org_url: org_url,
       tags: tags,
       description: description,
-      noOfPrs: noOfPrs,
+      no_of_prs: no_of_prs,
       link: link,
     );
   }
@@ -214,10 +216,10 @@ const $SwagElement = _$SwagElementTearOff();
 /// @nodoc
 mixin _$SwagElement {
   String get organization => throw _privateConstructorUsedError;
-  String get orgUrl => throw _privateConstructorUsedError;
+  String get org_url => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  int get noOfPrs => throw _privateConstructorUsedError;
+  int get no_of_prs => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -233,10 +235,10 @@ abstract class $SwagElementCopyWith<$Res> {
       _$SwagElementCopyWithImpl<$Res>;
   $Res call(
       {String organization,
-      String orgUrl,
+      String org_url,
       List<String> tags,
       String description,
-      int noOfPrs,
+      int no_of_prs,
       String link});
 }
 
@@ -251,10 +253,10 @@ class _$SwagElementCopyWithImpl<$Res> implements $SwagElementCopyWith<$Res> {
   @override
   $Res call({
     Object? organization = freezed,
-    Object? orgUrl = freezed,
+    Object? org_url = freezed,
     Object? tags = freezed,
     Object? description = freezed,
-    Object? noOfPrs = freezed,
+    Object? no_of_prs = freezed,
     Object? link = freezed,
   }) {
     return _then(_value.copyWith(
@@ -262,9 +264,9 @@ class _$SwagElementCopyWithImpl<$Res> implements $SwagElementCopyWith<$Res> {
           ? _value.organization
           : organization // ignore: cast_nullable_to_non_nullable
               as String,
-      orgUrl: orgUrl == freezed
-          ? _value.orgUrl
-          : orgUrl // ignore: cast_nullable_to_non_nullable
+      org_url: org_url == freezed
+          ? _value.org_url
+          : org_url // ignore: cast_nullable_to_non_nullable
               as String,
       tags: tags == freezed
           ? _value.tags
@@ -274,9 +276,9 @@ class _$SwagElementCopyWithImpl<$Res> implements $SwagElementCopyWith<$Res> {
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      noOfPrs: noOfPrs == freezed
-          ? _value.noOfPrs
-          : noOfPrs // ignore: cast_nullable_to_non_nullable
+      no_of_prs: no_of_prs == freezed
+          ? _value.no_of_prs
+          : no_of_prs // ignore: cast_nullable_to_non_nullable
               as int,
       link: link == freezed
           ? _value.link
@@ -295,10 +297,10 @@ abstract class _$SwagElementCopyWith<$Res>
   @override
   $Res call(
       {String organization,
-      String orgUrl,
+      String org_url,
       List<String> tags,
       String description,
-      int noOfPrs,
+      int no_of_prs,
       String link});
 }
 
@@ -315,10 +317,10 @@ class __$SwagElementCopyWithImpl<$Res> extends _$SwagElementCopyWithImpl<$Res>
   @override
   $Res call({
     Object? organization = freezed,
-    Object? orgUrl = freezed,
+    Object? org_url = freezed,
     Object? tags = freezed,
     Object? description = freezed,
-    Object? noOfPrs = freezed,
+    Object? no_of_prs = freezed,
     Object? link = freezed,
   }) {
     return _then(_SwagElement(
@@ -326,9 +328,9 @@ class __$SwagElementCopyWithImpl<$Res> extends _$SwagElementCopyWithImpl<$Res>
           ? _value.organization
           : organization // ignore: cast_nullable_to_non_nullable
               as String,
-      orgUrl: orgUrl == freezed
-          ? _value.orgUrl
-          : orgUrl // ignore: cast_nullable_to_non_nullable
+      org_url: org_url == freezed
+          ? _value.org_url
+          : org_url // ignore: cast_nullable_to_non_nullable
               as String,
       tags: tags == freezed
           ? _value.tags
@@ -338,9 +340,9 @@ class __$SwagElementCopyWithImpl<$Res> extends _$SwagElementCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      noOfPrs: noOfPrs == freezed
-          ? _value.noOfPrs
-          : noOfPrs // ignore: cast_nullable_to_non_nullable
+      no_of_prs: no_of_prs == freezed
+          ? _value.no_of_prs
+          : no_of_prs // ignore: cast_nullable_to_non_nullable
               as int,
       link: link == freezed
           ? _value.link
@@ -355,10 +357,10 @@ class __$SwagElementCopyWithImpl<$Res> extends _$SwagElementCopyWithImpl<$Res>
 class _$_SwagElement implements _SwagElement {
   const _$_SwagElement(
       {required this.organization,
-      required this.orgUrl,
+      required this.org_url,
       required this.tags,
       required this.description,
-      required this.noOfPrs,
+      required this.no_of_prs,
       required this.link});
 
   factory _$_SwagElement.fromJson(Map<String, dynamic> json) =>
@@ -367,19 +369,19 @@ class _$_SwagElement implements _SwagElement {
   @override
   final String organization;
   @override
-  final String orgUrl;
+  final String org_url;
   @override
   final List<String> tags;
   @override
   final String description;
   @override
-  final int noOfPrs;
+  final int no_of_prs;
   @override
   final String link;
 
   @override
   String toString() {
-    return 'SwagElement(organization: $organization, orgUrl: $orgUrl, tags: $tags, description: $description, noOfPrs: $noOfPrs, link: $link)';
+    return 'SwagElement(organization: $organization, org_url: $org_url, tags: $tags, description: $description, no_of_prs: $no_of_prs, link: $link)';
   }
 
   @override
@@ -389,16 +391,17 @@ class _$_SwagElement implements _SwagElement {
             (identical(other.organization, organization) ||
                 const DeepCollectionEquality()
                     .equals(other.organization, organization)) &&
-            (identical(other.orgUrl, orgUrl) ||
-                const DeepCollectionEquality().equals(other.orgUrl, orgUrl)) &&
+            (identical(other.org_url, org_url) ||
+                const DeepCollectionEquality()
+                    .equals(other.org_url, org_url)) &&
             (identical(other.tags, tags) ||
                 const DeepCollectionEquality().equals(other.tags, tags)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
-            (identical(other.noOfPrs, noOfPrs) ||
+            (identical(other.no_of_prs, no_of_prs) ||
                 const DeepCollectionEquality()
-                    .equals(other.noOfPrs, noOfPrs)) &&
+                    .equals(other.no_of_prs, no_of_prs)) &&
             (identical(other.link, link) ||
                 const DeepCollectionEquality().equals(other.link, link)));
   }
@@ -407,10 +410,10 @@ class _$_SwagElement implements _SwagElement {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(organization) ^
-      const DeepCollectionEquality().hash(orgUrl) ^
+      const DeepCollectionEquality().hash(org_url) ^
       const DeepCollectionEquality().hash(tags) ^
       const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(noOfPrs) ^
+      const DeepCollectionEquality().hash(no_of_prs) ^
       const DeepCollectionEquality().hash(link);
 
   @JsonKey(ignore: true)
@@ -427,10 +430,10 @@ class _$_SwagElement implements _SwagElement {
 abstract class _SwagElement implements SwagElement {
   const factory _SwagElement(
       {required String organization,
-      required String orgUrl,
+      required String org_url,
       required List<String> tags,
       required String description,
-      required int noOfPrs,
+      required int no_of_prs,
       required String link}) = _$_SwagElement;
 
   factory _SwagElement.fromJson(Map<String, dynamic> json) =
@@ -439,13 +442,13 @@ abstract class _SwagElement implements SwagElement {
   @override
   String get organization => throw _privateConstructorUsedError;
   @override
-  String get orgUrl => throw _privateConstructorUsedError;
+  String get org_url => throw _privateConstructorUsedError;
   @override
   List<String> get tags => throw _privateConstructorUsedError;
   @override
   String get description => throw _privateConstructorUsedError;
   @override
-  int get noOfPrs => throw _privateConstructorUsedError;
+  int get no_of_prs => throw _privateConstructorUsedError;
   @override
   String get link => throw _privateConstructorUsedError;
   @override

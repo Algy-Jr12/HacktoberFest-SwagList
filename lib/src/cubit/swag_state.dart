@@ -3,8 +3,6 @@ part of 'swag_cubit.dart';
 @immutable
 abstract class SwagState {}
 
-class SwagsInitial extends SwagState {}
-
 class SwagsLoading extends SwagState {}
 
 class SwagsLoaded extends SwagState {

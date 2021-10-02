@@ -12,7 +12,9 @@ _$_SwagList _$$_SwagListFromJson(Map<String, dynamic> json) => _$_SwagList(
         (k, e) => MapEntry(
             k,
             (e as List<dynamic>)
-                .map((e) => SwagElement.fromJson(e as Map<String, dynamic>))
+                .map((e) => e == null
+                    ? null
+                    : SwagElement.fromJson(e as Map<String, dynamic>))
                 .toList()),
       ),
     );
@@ -26,19 +28,19 @@ Map<String, dynamic> _$$_SwagListToJson(_$_SwagList instance) =>
 _$_SwagElement _$$_SwagElementFromJson(Map<String, dynamic> json) =>
     _$_SwagElement(
       organization: json['organization'] as String,
-      orgUrl: json['orgUrl'] as String,
+      org_url: json['org_url'] as String,
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       description: json['description'] as String,
-      noOfPrs: json['noOfPrs'] as int,
+      no_of_prs: json['no_of_prs'] as int,
       link: json['link'] as String,
     );
 
 Map<String, dynamic> _$$_SwagElementToJson(_$_SwagElement instance) =>
     <String, dynamic>{
       'organization': instance.organization,
-      'orgUrl': instance.orgUrl,
+      'org_url': instance.org_url,
       'tags': instance.tags,
       'description': instance.description,
-      'noOfPrs': instance.noOfPrs,
+      'no_of_prs': instance.no_of_prs,
       'link': instance.link,
     };

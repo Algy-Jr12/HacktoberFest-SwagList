@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'HF-2021 SwagList',
       theme: AppTheme.main,
       home: BlocProvider(
-        create: (_) => SwagCubit(SwagRepositoryImpl()),
+        create: (context) => SwagCubit(SwagRepositoryImpl()),
         child: HomePage(),
       ),
     );

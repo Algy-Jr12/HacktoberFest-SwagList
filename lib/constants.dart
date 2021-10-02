@@ -4,5 +4,5 @@ class Constants {
 }
 
 class Strings {
-  static const title = 'Hacktoberfest 2021 SwagList';
+  static const title = 'Hacktoberfest SwagList';
 }
