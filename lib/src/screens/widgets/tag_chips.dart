@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+import '../../theme/app_theme.dart';
+
 class TagChips extends StatelessWidget {
   final List<String> chips;
   const TagChips({Key? key, required this.chips}) : super(key: key);
@@ -13,6 +16,7 @@ class TagChips extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: chips.length,
         itemBuilder: (BuildContext context, int index) {
+          var tagColor = TAG_COLORS[chips[index]];
           return Row(
             children: [
               FilterChip(
@@ -20,6 +24,7 @@ class TagChips extends StatelessWidget {
                   chips[index],
                   style: TextStyle(fontSize: 15),
                 ),
+                backgroundColor: tagColor ??= AppColors.mercury,
                 onSelected: (_) {},
               ),
               SizedBox(width: 10),

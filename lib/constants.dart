@@ -1,3 +1,5 @@
+import 'src/theme/app_theme.dart';
+
 class Constants {
   static const DATA_URL =
       'https://raw.githubusercontent.com/monizb/hacktoberfest-swag-list/main/src/list.json';
@@ -32,3 +34,14 @@ You can read more about Hacktoberfest here. If you are a part of an organization
   static const addSwag =
       '\nWant to add this list to your own resource? Use the following JSON:';
 }
+
+const TAG_COLORS = {
+  'Tshirt': AppColors.lightRose,
+  'Stickers': AppColors.berylGreen,
+  'Bottle': AppColors.clayAsh,
+  'Socks': AppColors.gainsboro,
+  'Hoodie': AppColors.lightSalmon,
+  'Cap': AppColors.parchment,
+  'Swags': AppColors.mistyRose,
+  'Swag': AppColors.mistyRose,
+};
