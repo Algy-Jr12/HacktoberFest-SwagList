@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../constants.dart';
 import '../cubit/swag_cubit.dart';
 import '../models/swag.dart';
+import '../theme/app_theme.dart';
 import 'widgets/card_view.dart';
 import 'widgets/info_dialog.dart';
 import 'widgets/loading.dart';
@@ -57,17 +58,19 @@ class _HomePageState extends State<HomePage> {
             );
 
             return Scrollbar(
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: swagList.length,
-                itemBuilder: (ctx, index) => Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 3,
-                  ),
-                  child: SwagCardView(
-                    swagElement: swagList[index],
+              child: RefreshIndicator(
+                color: AppColors.brightRed,
+                onRefresh: () => _swagCubit.getSwags(),
+                child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: swagList.length,
+                  itemBuilder: (ctx, index) => Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 3,
+                    ),
+                    child: SwagCardView(swagElement: swagList[index]),
                   ),
                 ),
               ),
