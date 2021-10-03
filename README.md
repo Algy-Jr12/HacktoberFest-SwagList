@@ -1,4 +1,4 @@
-![Hacktoberfest logo](https://firebasestorage.googleapis.com/v0/b/board-eval-test.appspot.com/o/Add%20a%20heading.png?alt=media&token=9484a89d-c145-4dc8-9685-2ab0e8bd8bb6)
+![Hacktoberfest 2021](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
 
 # Hacktoberfest 2021 Swag List
 
