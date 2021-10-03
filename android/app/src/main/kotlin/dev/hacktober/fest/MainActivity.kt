@@ -1,4 +1,4 @@
-package com.example.hf_swag_list
+package dev.hacktober.fest
 
 import io.flutter.embedding.android.FlutterActivity
 
