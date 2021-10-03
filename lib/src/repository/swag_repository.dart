@@ -16,7 +16,7 @@ class SwagRepositoryImpl extends SwagRepository {
   Future<SwagList> getSwags() async {
     try {
       final _response = await _dio.get(Constants.DATA_URL);
-      print(jsonDecode(_response.data).toString());
+      print(jsonDecode(_response.data)['list'].toString());
       return SwagList.fromJson(jsonDecode(_response.data));
     } catch (e, trace) {
       debugPrint("ERROR: $e\nTRACE: $trace");

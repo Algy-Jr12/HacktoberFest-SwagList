@@ -15,10 +15,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late SwagCubit _swagCubit;
+
   @override
   void initState() {
+    _swagCubit = context.read<SwagCubit>();
+    _swagCubit.getSwags();
     super.initState();
-    BlocProvider.of<SwagCubit>(context).swagRepository.getSwags();
   }
 
   @override
@@ -48,6 +51,7 @@ class _HomePageState extends State<HomePage> {
                   return LoadingIndicator();
                 } else if (state is SwagsLoaded) {
                   return ListView.builder(
+                    shrinkWrap: true,
                     itemCount: 1,
                     itemBuilder: (ctx, index) {
                       return Text("Loaded");
