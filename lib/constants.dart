@@ -45,3 +45,15 @@ const TAG_COLORS = {
   'Swags': AppColors.mistyRose,
   'Swag': AppColors.mistyRose,
 };
+
+const TAG_EMOJI = {
+  'Tshirt': "👕",
+  'Stickers': "🏷️",
+  'Bottle': "🍾",
+  'Socks': "🧦",
+  'Hoodie': "🧥",
+  'Cap': "🧢",
+  'Swags': "🛍️",
+  'Swag': "🛍️",
+  'Default': "💜",
+};
