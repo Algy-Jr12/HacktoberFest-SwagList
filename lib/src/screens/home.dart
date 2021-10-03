@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hf_swag_list/src/screens/widgets/card_view.dart';
 
 import '../../constants.dart';
 import '../cubit/swag_cubit.dart';
 import '../models/swag.dart';
+import 'widgets/card_view.dart';
+import 'widgets/info_dialog.dart';
 import 'widgets/loading.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,7 +31,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(Strings.title),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return InfoDialog();
+            },
+          ),
           icon: Icon(Icons.help_outline),
         ),
         actions: [
@@ -68,11 +74,17 @@ class _HomePageState extends State<HomePage> {
             );
           } else if (state is SwagsError) {
             return Center(
-              child: Text(state.message),
+              child: Text(
+                state.message,
+                style: TextStyle(fontSize: 20),
+              ),
             );
           } else {
             return Center(
-              child: Text("Something went wrong!"),
+              child: Text(
+                "Something went wrong!",
+                style: TextStyle(fontSize: 20),
+              ),
             );
           }
         },

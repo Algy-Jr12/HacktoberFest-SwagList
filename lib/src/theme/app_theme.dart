@@ -21,4 +21,5 @@ class AppTheme {
 class AppColors {
   static const darkGreen = Color(0xFF667662);
   static const brightRed = Color(0xFFF74710);
+  static const dullRed = Color(0xFFb53a26);
 }
