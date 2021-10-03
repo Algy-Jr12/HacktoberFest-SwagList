@@ -7,7 +7,7 @@ part 'swag.g.dart';
 class SwagList with _$SwagList {
   const factory SwagList({
     required bool status,
-    required Map<String, List<SwagElement?>> list,
+    required Map<String, List<SwagElement>> list,
   }) = _SwagList;
 
   factory SwagList.fromJson(Map<String, dynamic> json) =>

@@ -40,36 +40,42 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Scrollbar(
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.all(10),
-            child: BlocBuilder<SwagCubit, SwagState>(
-              builder: (context, state) {
-                if (state is SwagsLoading) {
-                  return LoadingIndicator();
-                } else if (state is SwagsLoaded) {
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 1,
-                    itemBuilder: (ctx, index) {
-                      return Text("Loaded");
-                    },
-                  );
-                } else if (state is SwagsError) {
-                  return Center(
-                    child: Text(state.message),
-                  );
-                } else {
-                  return Center(
-                    child: Text("Something went wrong!"),
-                  );
-                }
-              },
-            ),
-          ),
-        ),
+      body: BlocBuilder<SwagCubit, SwagState>(
+        builder: (context, state) {
+          if (state is SwagsLoading) {
+            return LoadingIndicator();
+          } else if (state is SwagsLoaded) {
+            List<SwagElement> swagList = [];
+            state.swags.list.forEach(
+              (_, value) => swagList = [...swagList, ...value],
+            );
+
+            return Scrollbar(
+              child: ListView.builder(
+                physics: BouncingScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: swagList.length,
+                itemBuilder: (ctx, index) => Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 3,
+                  ),
+                  child: SwagCardView(
+                    swagElement: swagList[index],
+                  ),
+                ),
+              ),
+            );
+          } else if (state is SwagsError) {
+            return Center(
+              child: Text(state.message),
+            );
+          } else {
+            return Center(
+              child: Text("Something went wrong!"),
+            );
+          }
+        },
       ),
     );
   }

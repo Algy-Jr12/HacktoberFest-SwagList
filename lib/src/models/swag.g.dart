@@ -12,9 +12,7 @@ _$_SwagList _$$_SwagListFromJson(Map<String, dynamic> json) => _$_SwagList(
         (k, e) => MapEntry(
             k,
             (e as List<dynamic>)
-                .map((e) => e == null
-                    ? null
-                    : SwagElement.fromJson(e as Map<String, dynamic>))
+                .map((e) => SwagElement.fromJson(e as Map<String, dynamic>))
                 .toList()),
       ),
     );

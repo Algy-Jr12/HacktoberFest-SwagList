@@ -22,7 +22,7 @@ class _$SwagListTearOff {
   const _$SwagListTearOff();
 
   _SwagList call(
-      {required bool status, required Map<String, List<SwagElement?>> list}) {
+      {required bool status, required Map<String, List<SwagElement>> list}) {
     return _SwagList(
       status: status,
       list: list,
@@ -40,8 +40,7 @@ const $SwagList = _$SwagListTearOff();
 /// @nodoc
 mixin _$SwagList {
   bool get status => throw _privateConstructorUsedError;
-  Map<String, List<SwagElement?>> get list =>
-      throw _privateConstructorUsedError;
+  Map<String, List<SwagElement>> get list => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,7 +52,7 @@ mixin _$SwagList {
 abstract class $SwagListCopyWith<$Res> {
   factory $SwagListCopyWith(SwagList value, $Res Function(SwagList) then) =
       _$SwagListCopyWithImpl<$Res>;
-  $Res call({bool status, Map<String, List<SwagElement?>> list});
+  $Res call({bool status, Map<String, List<SwagElement>> list});
 }
 
 /// @nodoc
@@ -77,7 +76,7 @@ class _$SwagListCopyWithImpl<$Res> implements $SwagListCopyWith<$Res> {
       list: list == freezed
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<SwagElement?>>,
+              as Map<String, List<SwagElement>>,
     ));
   }
 }
@@ -87,7 +86,7 @@ abstract class _$SwagListCopyWith<$Res> implements $SwagListCopyWith<$Res> {
   factory _$SwagListCopyWith(_SwagList value, $Res Function(_SwagList) then) =
       __$SwagListCopyWithImpl<$Res>;
   @override
-  $Res call({bool status, Map<String, List<SwagElement?>> list});
+  $Res call({bool status, Map<String, List<SwagElement>> list});
 }
 
 /// @nodoc
@@ -112,7 +111,7 @@ class __$SwagListCopyWithImpl<$Res> extends _$SwagListCopyWithImpl<$Res>
       list: list == freezed
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<SwagElement?>>,
+              as Map<String, List<SwagElement>>,
     ));
   }
 }
@@ -128,7 +127,7 @@ class _$_SwagList implements _SwagList {
   @override
   final bool status;
   @override
-  final Map<String, List<SwagElement?>> list;
+  final Map<String, List<SwagElement>> list;
 
   @override
   String toString() {
@@ -165,15 +164,14 @@ class _$_SwagList implements _SwagList {
 abstract class _SwagList implements SwagList {
   const factory _SwagList(
       {required bool status,
-      required Map<String, List<SwagElement?>> list}) = _$_SwagList;
+      required Map<String, List<SwagElement>> list}) = _$_SwagList;
 
   factory _SwagList.fromJson(Map<String, dynamic> json) = _$_SwagList.fromJson;
 
   @override
   bool get status => throw _privateConstructorUsedError;
   @override
-  Map<String, List<SwagElement?>> get list =>
-      throw _privateConstructorUsedError;
+  Map<String, List<SwagElement>> get list => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SwagListCopyWith<_SwagList> get copyWith =>
