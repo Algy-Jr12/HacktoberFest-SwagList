@@ -34,18 +34,10 @@ class _HomePageState extends State<HomePage> {
         leading: IconButton(
           onPressed: () => showDialog(
             context: context,
-            builder: (BuildContext context) {
-              return InfoDialog();
-            },
+            builder: (context) => InfoDialog(),
           ),
           icon: Icon(Icons.help_outline),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-          ),
-        ],
       ),
       body: BlocBuilder<SwagCubit, SwagState>(
         builder: (context, state) {
@@ -77,10 +69,7 @@ class _HomePageState extends State<HomePage> {
             );
           } else if (state is SwagsError) {
             return Center(
-              child: Text(
-                state.message,
-                style: TextStyle(fontSize: 20),
-              ),
+              child: Text(state.message),
             );
           } else {
             return Center(
