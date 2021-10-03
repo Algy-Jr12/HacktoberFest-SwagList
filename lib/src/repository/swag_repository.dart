@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -14,7 +16,8 @@ class SwagRepositoryImpl extends SwagRepository {
   Future<SwagList> getSwags() async {
     try {
       final _response = await _dio.get(Constants.DATA_URL);
-      return SwagList.fromJson(_response.data);
+      print(jsonDecode(_response.data).toString());
+      return SwagList.fromJson(jsonDecode(_response.data));
     } catch (e, trace) {
       debugPrint("ERROR: $e\nTRACE: $trace");
       rethrow;

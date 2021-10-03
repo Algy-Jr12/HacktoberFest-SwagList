@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hf_swag_list/src/cubit/swag_cubit.dart';
-import 'package:hf_swag_list/src/models/swag.dart';
-import 'package:hf_swag_list/src/theme/app_theme.dart';
+import 'package:hf_swag_list/src/screens/widgets/card_view.dart';
 
 import '../../constants.dart';
+import '../cubit/swag_cubit.dart';
+import '../models/swag.dart';
+import 'widgets/loading.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -47,9 +48,9 @@ class _HomePageState extends State<HomePage> {
                   return LoadingIndicator();
                 } else if (state is SwagsLoaded) {
                   return ListView.builder(
-                    itemCount: state.swags.list.values.length,
+                    itemCount: 1,
                     itemBuilder: (ctx, index) {
-                      return CircleAvatar();
+                      return Text("Loaded");
                     },
                   );
                 } else if (state is SwagsError) {
@@ -64,44 +65,6 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class LoadingIndicator extends StatelessWidget {
-  const LoadingIndicator({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: CircularProgressIndicator(
-        color: AppColors.brightRed,
-      ),
-    );
-  }
-}
-
-class SwagCardView extends StatelessWidget {
-  final SwagElement swagElement;
-  const SwagCardView({
-    Key? key,
-    required this.swagElement,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      child: InkWell(
-        onTap: () {},
-        child: Column(
-          children: [
-            ListTile(
-              title: Text(swagElement.organization),
-            )
-          ],
         ),
       ),
     );
