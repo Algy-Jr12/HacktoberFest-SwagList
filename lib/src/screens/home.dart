@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'widgets/custom_search_delegate.dart';
 import '../../constants.dart';
 import '../cubit/swag_cubit.dart';
 import '../models/swag.dart';
@@ -38,6 +39,17 @@ class _HomePageState extends State<HomePage> {
           ),
           icon: Icon(Icons.help_outline),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(_swagCubit),
+              );
+            },
+            icon: Icon(Icons.search),
+          ),
+        ],
       ),
       body: BlocBuilder<SwagCubit, SwagState>(
         builder: (context, state) {
