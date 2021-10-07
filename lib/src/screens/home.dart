@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    List<SwagElement> swagList = [];
     return Scaffold(
       appBar: AppBar(
         title: Text(Strings.title),
@@ -41,12 +42,10 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: CustomSearchDelegate(_swagCubit),
-              );
-            },
+            onPressed: () => showSearch(
+              context: context,
+              delegate: CustomSearchDelegate(swagList),
+            ),
             icon: Icon(Icons.search),
           ),
         ],
@@ -56,7 +55,6 @@ class _HomePageState extends State<HomePage> {
           if (state is SwagsLoading) {
             return LoadingIndicator();
           } else if (state is SwagsLoaded) {
-            List<SwagElement> swagList = [];
             state.swags.list.forEach(
               (_, value) => swagList = [...swagList, ...value],
             );

@@ -1,11 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-import '../../cubit/swag_cubit.dart';
+import 'package:hf_swag_list/extensions.dart';
+import 'package:hf_swag_list/src/screens/widgets/card_view.dart';
+import '../../models/swag.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
-  final SwagCubit swagCubit;
+  final List<SwagElement> swagList;
 
-  CustomSearchDelegate(this.swagCubit);
+  CustomSearchDelegate(this.swagList);
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -36,16 +38,31 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    // TODO return Widget showing matched data result
-    return Column();
+    // Get matching results that contains query
+    List matched = [];
+    swagList.forEach((element) {
+      if (element.organization.containsIgnoreCase(query.trim())) {
+        matched.add(element);
+      }
+    });
+
+    return matched.isNotEmpty
+        ? ListView.builder(
+            itemCount: matched.length,
+            itemBuilder: (context, index) {
+              return SwagCardView(
+                swagElement: matched[index],
+              );
+            })
+        : Center(
+            child: Text(
+            'No Results Found',
+            style: TextStyle(fontSize: 20),
+          ));
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO return List of suggestion of matching query on type
-    /**
-     * use global variable "query" to get matched data
-     */
     return Column();
   }
 }
